@@ -10,7 +10,7 @@ include "includes/dbconnect.php";
 <!DOCTYPE html>
 <html>
 <?php include "includes/css_header.php";
-if (($_SESSION['email'] == "admin@mangola.com")) {
+if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
   include "includes/header_admin.php";
 } else {
   include "includes/header_postlogin.php";
@@ -51,7 +51,7 @@ if (($_SESSION['email'] == "admin@mangola.com")) {
           <div class="col-md-12 bio-tab">
             <div class="row">
               <div class="col-md-4">
-                <img src="images/mangola2.jpg" class="img-size img-circle">
+                <img src="images/website_logo.jpeg" class="img-size img-circle" style="object-fit: none;">
               </div>
 
               <div class="col-md-8">

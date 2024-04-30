@@ -11,6 +11,8 @@ include "includes/dbconnect.php";
 $email = $_POST['user_email'];
 $password = $_POST['user_password'];
 
+// $pwd_decrpt = password_verify($password, $hash)
+
 $query = "SELECT * FROM `users` WHERE `email` LIKE '$email' AND `password` LIKE '$password'";
 
 //running the serch in DB and storing in $result
@@ -31,7 +33,7 @@ if ($num_rows == 1) {
 	$_SESSION['user_id'] = $row['user_id'];
 
 
-	if (($_SESSION['email'] == "admin@mangola.com") && ($row['password'] == "1234")) {
+	if (($_SESSION['email'] == "admin@strawberryHeaven.com") && ($row['password'] == "1234")) {
 		header('Location: admin.php');
 	} else
 		header('Location: products.php');

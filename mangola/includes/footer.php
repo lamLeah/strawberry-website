@@ -18,7 +18,7 @@
       <div class="footer">
         <p class="justify">
         <h4 class="text-center text-red"> Contact us </h4> <br>
-        Address: University of Macau
+        Address: University of Macau<br>
         Phone: +853-88888888<br>
         Email: support@StrawberryHeaven.com<br>
         </p>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="footer">
+      <div class="footer social-media">
         <h4 class="text-center"><b> Follow Strawberry Heaven on:</b> </h4>
         <a href="https://www.facebook.com/anirbandey303"> <img src="images/fb.jpg" class="thumbnail"> </a>
         <a href="https://www.instagram.com/_anirbandey_"> <img src="images/insta.jpg" class="thumbnail"> </a>

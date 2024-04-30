@@ -190,7 +190,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
 (39, 'Vishal', 'vishalrc_1@gmail.com', 'vishal'),
 (37, 'Agnish', 'agnishgupta@gmail.com', 'agnish'),
 (36, 'Mamta', 'mamtabanarjee@tmc.com', 'mamta'),
-(19, 'Admin', 'admin@mangola.com', '1234'),
+(19, 'Admin', 'admin@strawberryHeaven.com', '1234'),
 (35, 'Lalu', 'yadav_lalu@bihar.com', 'bihari'),
 (31, '', '', ''),
 (34, 'Rahul', 'gandhi.rahul@congress.com', 'abcd'),
