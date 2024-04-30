@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a href="index.php" class="navbar-brand text-white">Mangola</a>
+      <a href="index.php" class="navbar-brand text-white">Strawberry Heaven</a>
     </div>
-    
+
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
         <li><a class="text-white" href="index.php">Home</a></li>
-      </ul>     
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
