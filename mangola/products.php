@@ -56,7 +56,8 @@ if (($_SESSION['email'] == "admin@mangola.com")) {
 
               <div class="col-md-8">
                 <h1 class="text-center"> <b>About StrawberryHeaven.com</b> </h1>
-                <p>&nbsp&nbsp&nbsp&nbsp<b><i>India’s Ultimate Online Mango Shopping Site <b>Strawberry Heaven</b>’s vision is to create India’s most reliable and frictionless commerce ecosystem that creates life-changing experiences for buyers and sellers.<b>StrawberryHeaven.com</b> is India’s largest online Mango shopping marketplace. A Boon The trend of online shopping is becoming a household name and so is Strawberry Heaven.</i></b></p>
+                <p>&nbsp&nbsp&nbsp&nbsp<b><i>Online Strawberry Shopping Site <b>Strawberry Heaven</b>'s vision is to create the world's most reliable, frictionless commerce ecosystem, creating life-changing experiences for buyers and sellers.StrawberryHeaven.com is the world's largest online strawberry shopping marketplace. An online shopping trend is becoming a household name and so is <b>Strawberry Heaven</b>.
+                    </i></b></p>
               </div>
             </div>
           </div>
