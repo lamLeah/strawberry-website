@@ -17,7 +17,7 @@ if (($_SESSION['email'] == "admin@mangola.com")) {
 }
 ?>
 
-<body style="background-image: url('images/background2.jpg'); !important">
+<body style="background-image: url('images/background2.jpg')!important;">
 
 
   <div class="container ">
