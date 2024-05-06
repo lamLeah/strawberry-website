@@ -186,7 +186,7 @@ include "./includes/header_postlogin.php";
                         </div>
                         <div class="input-container">
                             <div class="div-block-5">
-                                <input type="submit" value="Verify" data-wait="Please wait..." class="submit-button w-button" />
+                                <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button" />
                             </div>
                         </div>
                     </form>
