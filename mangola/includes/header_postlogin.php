@@ -16,6 +16,7 @@
         <li><a class="text-white" href="show_cart_items.php">Cart</a></li>
         <li><a class="text-white" href="show_wishlist_items.php">Wishlist</a></li>
         <li><a class="text-white" href="show_order_items.php">Orders</a></li>
+        <li><a class="text-white" href="profile.php">Profile</a></li>
         <li><a class="text-white" href="logout.php">Logout</a></li>
       </ul>
 

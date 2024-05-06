@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 20, 2017 at 09:03 AM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- 主机： 127.0.0.1:3306
+-- 生成日期： 2024-05-06 20:55:22
+-- 服务器版本： 10.4.21-MariaDB
+-- PHP 版本： 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mangola`
+-- 数据库： `mangola`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- 表的结构 `cart`
 --
 
 CREATE TABLE `cart` (
@@ -33,21 +34,24 @@ CREATE TABLE `cart` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cart`
+-- 转存表中的数据 `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `product_id`, `user_id`) VALUES
-(94, 8, 41),
 (91, 2, 33),
 (88, 6, 18),
 (98, 5, 45),
 (89, 3, 18),
-(96, 1, 46);
+(96, 1, 46),
+(102, 2, 41),
+(101, 3, 41),
+(104, 19, 19),
+(106, 7, 41);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `details`
+-- 表的结构 `details`
 --
 
 CREATE TABLE `details` (
@@ -59,7 +63,7 @@ CREATE TABLE `details` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `details`
+-- 转存表中的数据 `details`
 --
 
 INSERT INTO `details` (`details_id`, `user_id`, `product_id`, `address`, `quantity`) VALUES
@@ -67,12 +71,14 @@ INSERT INTO `details` (`details_id`, `user_id`, `product_id`, `address`, `quanti
 (21, 41, 2, 'Pratapgarh, Garia, Kolkata-700103', 7),
 (22, 46, 6, 'Kamalgazi, Kolkata-700135', 5),
 (19, 33, 6, '2/3 E Block, Surat, Gujrat-395002', 5),
-(20, 40, 3, 'Mahamayatala, Garia, Kolkata-84', 3);
+(20, 40, 3, 'Mahamayatala, Garia, Kolkata-84', 3),
+(24, 41, 3, 'macao', 20),
+(25, 41, 8, 'macao', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- 表的结构 `orders`
 --
 
 CREATE TABLE `orders` (
@@ -82,7 +88,7 @@ CREATE TABLE `orders` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `orders`
+-- 转存表中的数据 `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`) VALUES
@@ -90,12 +96,16 @@ INSERT INTO `orders` (`order_id`, `user_id`, `product_id`) VALUES
 (58, 46, 6),
 (57, 41, 2),
 (55, 33, 6),
-(56, 40, 3);
+(56, 40, 3),
+(60, 41, 3),
+(61, 48, 2),
+(62, 41, 8),
+(63, 41, 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- 表的结构 `products`
 --
 
 CREATE TABLE `products` (
@@ -107,23 +117,23 @@ CREATE TABLE `products` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `products`
+-- 转存表中的数据 `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_description`, `product_image`) VALUES
-(1, 'Alphonso', 250, 'Also known as Hapoo, this is the most expensive variety of mangoes in India. Maharashtra, Gujarat and Karnataka are its prime producers. It has a fibreless pulp and douses into the mouth as a smooth-creamy mango. This variety of mango is popular all over the world.\r\nSeason: May-June', 'Alphonso.jpg'),
-(2, 'Chaunsa', 200, 'The name was given by the Muslim Suri Emperor Sher Shah Suri. It is sweet, juicy and very nutritious. The heavenly sweet taste of this mango will make you lick up every drop of its nectar. It is mostly grown in the northern parts of India.\r\n\r\nSeason: July end-August', 'Chaunsa.jpg'),
-(3, 'Dasehri', 120, 'It is the oldest variety of Mangoes in India, since its origin can be traced back to almost 200 years ago. The sweet syrup of this mango makes you have at least 2-3 mangoes at a time. Uttar Pradesh is the largest producer of this variety of mangoes.\r\nSeason: June-July', 'Dasehri.jpg'),
-(4, 'Langra', 150, 'The mother tree of this variety exists in Varanasi. Since the owner of that tree was unfortunately lame, the mango was thus named as “Langra”. This variety is distinctively fibrous, with a unique taste as well. It is majorly grown in Haryana, Bihar, Uttar Pradesh and West Bengal.\r\nSeason: Mid-July to August', 'Langra.jpeg'),
-(5, 'Banganapalli', 140, 'These mangoes have a very beautiful yellow color and are sweet and fibreless. It is the most popular variety of mangoes which comes straight from Andhra Pradesh.\r\nSeason: April to June', 'Banganapalli.jpg'),
-(6, 'Kesar', 110, 'These mangoes have a very beautiful yellow color and are sweet and fibreless. It is the most popular variety of mangoes which comes straight from Andhra Pradesh.\r\nSeason: April to June', 'Kesar.jpeg'),
-(7, 'Neelam', 200, 'This is one variety that grows throughout the country. With its specialty in Hyderabad, it is a large-yielding variety of mangoes. Though it arrives early in the season, the best variety is available only in June.\r\nSeason: May-July', 'Neelam.jpg'),
-(8, 'Sindoora', 220, 'Its reddish color at the top has entitled this variety with the name of Sindoora. Extremely juicy and pulpy, this mango is one of the tastiest mangoes one can ever have.\r\nSeason: Mid-May to Mid-June', 'Sindoora.jpg');
+(1, 'Honeoye', 250, 'Honeoye strawberries are day-neutral June-bearing strawberries. They’re large berries that range in color from bright orange-red to red. They’re true to their name as they taste sweet, like honey. This type of strawberry produces a lot of berries, as it has a high yield and a long growing season.', 'Honeoye.jpg'),
+(2, 'Earliglow', 200, 'Earliglow is a June-bearing strawberry that’s true to its name because it produces berries sooner than any other strawberry. Its berry size is medium to large, with a deep red color and a shape that’s symmetrical and conical. They have a sweet flavor that’s great for canning.', 'Earliglow.jpeg'),
+(3, 'Allstar', 120, 'Allstar strawberries look most like the stereotypical strawberries you’d find in a grocery store. They feature a perfect strawberry shape and plump, red appearance. They’re large strawberries that ripen in late mid-season. They have a mild but sweet flavor and are resistant to disease.', 'Allstar.jpeg'),
+(4, 'Ozark Beauty', 150, 'Ozark Beauty is extremely popular everbearing variety of strawberry. The strawberries produced are sweet, red, and rather large for an everbearing variety. They also feature several large yields several times a year – one in early spring and one later in the season, with a few berries produced in between.', 'OzarkBeauty.jpeg'),
+(5, 'Chandler', 140, 'Chandler strawberries are June bearers that produce very large, firm, and exceptionally tasty strawberries. Their glossy, red color and flavor profile are extremely desirable. However, the drawback of Chandler berries is that they are not very resistant to disease.', 'Chandler.jpeg'),
+(6, 'Jewel', 110, 'Jewel strawberries are the picture perfect strawberry. They’re large, red, and juicy. They have an excellent flavor and are high-quality and hearty. They also have longer season yields.', 'Jewel.jpeg'),
+(7, 'Seascape', 200, 'Seascape is an everbearing strawberry variety that is resistant to disease and tolerant of a variety of growing conditions. Not only are they bright red on the outside, but they also feature a delectable red flesh on the inside.', 'Seascape.jpeg'),
+(8, 'Tristar', 220, 'Its reddish color at the top has entitled this variety with the name of Sindoora. Extremely juicy and pulpy, this mango is one of the tastiest mangoes one can ever have.\r\nSeason: Mid-May to Mid-June', 'Tristar.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- 表的结构 `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -135,7 +145,7 @@ CREATE TABLE `reviews` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `reviews`
+-- 转存表中的数据 `reviews`
 --
 
 INSERT INTO `reviews` (`review_id`, `product_id`, `user_id`, `review_heading`, `review_text`) VALUES
@@ -163,48 +173,61 @@ INSERT INTO `reviews` (`review_id`, `product_id`, `user_id`, `review_heading`, `
 (60, 3, 40, 'I am returning home this Monday', 'I am returning home this Monday hope it gets delivered by then.'),
 (61, 6, 39, 'Very Sweet', 'Its so sweet in test!'),
 (62, 1, 39, 'Its so juicy', 'The best variety of mangoes.'),
-(63, 6, 33, 'Great!', 'Its very nice!');
+(63, 6, 33, 'Great!', 'Its very nice!'),
+(64, 8, 41, 'i like this', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- 表的结构 `users`
 --
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `user_profile_image` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- 转存表中的数据 `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
-(42, 'Dhvanil', 'dhvanilpatel@gmail.com', 'dhvanil'),
-(41, 'Chayan', 'chayanmaida@hotmail.com', 'chayan'),
-(40, 'Bananta', 'banantabala@gmail.com', 'bananta'),
-(38, 'Anindo', 'anindodas@yahoo.in', 'anindo'),
-(39, 'Vishal', 'vishalrc_1@gmail.com', 'vishal'),
-(37, 'Agnish', 'agnishgupta@gmail.com', 'agnish'),
-(36, 'Mamta', 'mamtabanarjee@tmc.com', 'mamta'),
-(19, 'Admin', 'admin@strawberryHeaven.com', '1234'),
-(35, 'Lalu', 'yadav_lalu@bihar.com', 'bihari'),
-(31, '', '', ''),
-(34, 'Rahul', 'gandhi.rahul@congress.com', 'abcd'),
-(33, 'Modi', 'narendra_modi@bjp.com', 'namo'),
-(18, 'Anirban', 'anirban@anirban.com', '1234'),
-(43, 'Niloy', 'niloyburdhan@hotmail.com', 'niloy'),
-(44, 'Rana Pratap', 'ranapratap@hotmail.com', 'ranapratap'),
-(45, 'Sourav', 'souravnaskar@rediffmail.com', 'sourav'),
-(46, 'Subhradip', 'subhradiprustyroy@rediffmail.com', 'rusty');
+INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `user_profile_image`, `phone`, `address`) VALUES
+(42, 'Dhvanil', 'dhvanilpatel@gmail.com', 'dhvanil', '', '', ''),
+(41, 'Chayan', 'chayanmaida@hotmail.com', 'chayan', 'images/user_profiles/41.jpeg', '1234567890', 'macau 110'),
+(40, 'Bananta', 'banantabala@gmail.com', 'bananta', '', '', ''),
+(38, 'Anindo', 'anindodas@yahoo.in', 'anindo', '', '', ''),
+(39, 'Vishal', 'vishalrc_1@gmail.com', 'vishal', '', '', ''),
+(37, 'Agnish', 'agnishgupta@gmail.com', 'agnish', '', '', ''),
+(36, 'Mamta', 'mamtabanarjee@tmc.com', 'mamta', '', '', ''),
+(19, 'Admin', 'admin@strawberryHeaven.com', '1234', '', '', ''),
+(35, 'Lalu', 'yadav_lalu@bihar.com', 'bihari', '', '', ''),
+(31, '', '', '', '', '', ''),
+(34, 'Rahul', 'gandhi.rahul@congress.com', 'abcd', '', '', ''),
+(33, 'Modi', 'narendra_modi@bjp.com', 'namo', '', '', ''),
+(18, 'Anirban', 'anirban@anirban.com', '1234', '', '', ''),
+(43, 'Niloy', 'niloyburdhan@hotmail.com', 'niloy', '', '', ''),
+(44, 'Rana Pratap', 'ranapratap@hotmail.com', 'ranapratap', '', '', ''),
+(45, 'Sourav', 'souravnaskar@rediffmail.com', 'sourav', '', '', ''),
+(46, 'Subhradip', 'subhradiprustyroy@rediffmail.com', 'rusty', '', '', ''),
+(47, 'LLLL', 'leah@123.com', 'leahfldjflka', '', '', ''),
+(48, 'LLL', 'lll@gmail.com', 'jdlkfjdlskaj', '', '', ''),
+(49, 'LLL', 'leah@456.com', 'fadssadcsad', '', '', ''),
+(50, 'Lin', 'lin@gmail.com', '12345678', '', '', ''),
+(51, 'LLLLdaf', 'leah@123fads.com', 'fadsfasdfasd', NULL, '321423443254', NULL),
+(52, 'fdsafcad', 'leah@gsfgf123.com', 'fdsfdfa', NULL, '32142344', NULL),
+(53, 'fdsafcadfad', 'lefadsfah@123.com', 'fadsgsfsdvczx', NULL, '321423443245', NULL),
+(54, 'afgsfdafs', 'dadgsdfsa@fsda.com', 'fadsfsda', NULL, '321423441234', NULL),
+(55, 'LLLLdafafsd', 'dhvanilpfadsfatel@gmail.com', 'adsfdscad', NULL, '3214234423145', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- 表的结构 `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -214,7 +237,7 @@ CREATE TABLE `wishlist` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wishlist`
+-- 转存表中的数据 `wishlist`
 --
 
 INSERT INTO `wishlist` (`wishlist_id`, `product_id`, `user_id`) VALUES
@@ -234,47 +257,47 @@ INSERT INTO `wishlist` (`wishlist_id`, `product_id`, `user_id`) VALUES
 (64, 2, 45);
 
 --
--- Indexes for dumped tables
+-- 转储表的索引
 --
 
 --
--- Indexes for table `cart`
+-- 表的索引 `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
--- Indexes for table `details`
+-- 表的索引 `details`
 --
 ALTER TABLE `details`
   ADD PRIMARY KEY (`details_id`);
 
 --
--- Indexes for table `orders`
+-- 表的索引 `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `products`
+-- 表的索引 `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `reviews`
+-- 表的索引 `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Indexes for table `users`
+-- 表的索引 `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `wishlist`
+-- 表的索引 `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`wishlist_id`),
@@ -284,44 +307,52 @@ ALTER TABLE `wishlist`
   ADD KEY `user_id_2` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在导出的表使用AUTO_INCREMENT
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- 使用表AUTO_INCREMENT `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+
 --
--- AUTO_INCREMENT for table `details`
+-- 使用表AUTO_INCREMENT `details`
 --
 ALTER TABLE `details`
-  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
--- AUTO_INCREMENT for table `orders`
+-- 使用表AUTO_INCREMENT `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
 --
--- AUTO_INCREMENT for table `products`
+-- 使用表AUTO_INCREMENT `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
--- AUTO_INCREMENT for table `reviews`
+-- 使用表AUTO_INCREMENT `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+
 --
--- AUTO_INCREMENT for table `users`
+-- 使用表AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
 --
--- AUTO_INCREMENT for table `wishlist`
+-- 使用表AUTO_INCREMENT `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

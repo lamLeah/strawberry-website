@@ -11,7 +11,7 @@
 		<?php
 		if (isset($_GET['msg'])) {
 			if ($_GET['msg'] == '2') {
-				echo "<h3 class='text-center text-white margin-top50'><i>User Email Already Taken!</i></h3>";
+				echo "<h3 class='text-center text-white margin-top50'><i>User Email OR Phone Already Taken!</i></h3>";
 			}
 		}
 		?>
@@ -27,6 +27,8 @@
 					<input type="Name" class="form-control" placeholder="Enter your Name" name="user_name" required><br>
 					<label class="text-white">Email:</label>
 					<input type="email" class="form-control" placeholder="Enter your Email" name="user_email" required><br>
+					<label class="text-white">Phone:</label>
+					<input type="tel" class="form-control" placeholder="Enter your Phone" name="user_phone" required><br>
 					<label class="text-white">Password:</label>
 					<input type="password" class="form-control" placeholder="Password" name="user_password" required><br>
 					<input type="submit" class="btn btn-danger btn-lg btn-block" value="Register" name=""><br>
