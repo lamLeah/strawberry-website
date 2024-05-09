@@ -39,8 +39,12 @@ include "includes/dbconnect.php";
 				      	   	<div class="col-md-6">
 				      	   		<div class="product-tab">
 					                <h1 class="text-center"> ' . $row['product_name'] . '</h1>
-					                <p> &nbsp&nbsp&nbsp&nbsp ' . $row['product_description'] . '<br>
-					                <br> <b>&nbsp&nbsp&nbsp&nbspPrice: ₹' . $row['product_price'] . '/Kg</b><br><br></p> 
+					                <p> &nbsp&nbsp&nbsp&nbsp ' . $row['product_description'] . '<br><br> 
+													<b>&nbsp&nbsp&nbsp&nbspPrice:</b>'
+		. ($row['product_discount'] > 0 ?
+			'<span style="text-decoration: line-through; color: #b9b0b0; font-size: small">₹' . $row['product_price'] . '/Kg</span> <b>₹' . $row['product_price'] * (1 - $row['product_discount'] / 100) . '/Kg</b>'
+			: '<b>₹' . $row['product_price'] . '/Kg</b>') .
+		'<br><br></p> 
 					                <a href="add_to_cart.php?product_id=' . $product_id . '" class="btn btn-lg btn-danger"> Add to Cart </a>
 					                <a href="add_to_wishlist.php?product_id=' . $product_id . '" class="btn btn-lg btn-danger"> Add to Wishlist </a>
 				                </div>

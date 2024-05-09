@@ -32,8 +32,9 @@ if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
         echo '<div class="col-md-3">
                   <div class="product-tab">
                     <img src="images/' . $row['product_image'] . '" class="img-size curve-edge">
-                    <h3 class="text-center"><b>' . $row['product_name'] . '</b></h3>
-                    <p class="justify"><b><i> &nbsp&nbsp&nbsp&nbsp ' . $row['product_description'] . '</i></b></p>
+                    <h3 class="text-center"><b>' . $row['product_name'] . '</b></h3>'
+          . ($row['product_discount'] > 0 ? '<h4 class="text-center" style="color: red"><b>!!!Discount: ' . $row['product_discount'] . '% off</b></h4>' : '') .
+          '<p class="justify"><b><i> &nbsp&nbsp&nbsp&nbsp ' . $row['product_description'] . '</i></b></p>
                     <a href="product_description.php?product_id=' . $row['product_id'] . '" class="btn btn-block btn-success"> View Details </a>
                   </div>
                 </div>';

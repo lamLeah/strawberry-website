@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1:3306
--- 生成日期： 2024-05-06 20:55:22
+-- 生成日期： 2024-05-09 18:48:48
 -- 服务器版本： 10.4.21-MariaDB
 -- PHP 版本： 7.4.27
 
@@ -46,6 +46,7 @@ INSERT INTO `cart` (`cart_id`, `product_id`, `user_id`) VALUES
 (102, 2, 41),
 (101, 3, 41),
 (104, 19, 19),
+(107, 1, 19),
 (106, 7, 41);
 
 -- --------------------------------------------------------
@@ -73,7 +74,8 @@ INSERT INTO `details` (`details_id`, `user_id`, `product_id`, `address`, `quanti
 (19, 33, 6, '2/3 E Block, Surat, Gujrat-395002', 5),
 (20, 40, 3, 'Mahamayatala, Garia, Kolkata-84', 3),
 (24, 41, 3, 'macao', 20),
-(25, 41, 8, 'macao', 5);
+(25, 41, 8, 'macao', 5),
+(26, 41, 1, 'macao', 2);
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,8 @@ INSERT INTO `orders` (`order_id`, `user_id`, `product_id`) VALUES
 (60, 41, 3),
 (61, 48, 2),
 (62, 41, 8),
-(63, 41, 6);
+(63, 41, 6),
+(64, 41, 1);
 
 -- --------------------------------------------------------
 
@@ -113,22 +116,23 @@ CREATE TABLE `products` (
   `product_name` varchar(255) NOT NULL,
   `product_price` int(255) NOT NULL,
   `product_description` text NOT NULL,
-  `product_image` varchar(255) NOT NULL
+  `product_image` varchar(255) NOT NULL,
+  `product_discount` float NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- 转存表中的数据 `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_description`, `product_image`) VALUES
-(1, 'Honeoye', 250, 'Honeoye strawberries are day-neutral June-bearing strawberries. They’re large berries that range in color from bright orange-red to red. They’re true to their name as they taste sweet, like honey. This type of strawberry produces a lot of berries, as it has a high yield and a long growing season.', 'Honeoye.jpg'),
-(2, 'Earliglow', 200, 'Earliglow is a June-bearing strawberry that’s true to its name because it produces berries sooner than any other strawberry. Its berry size is medium to large, with a deep red color and a shape that’s symmetrical and conical. They have a sweet flavor that’s great for canning.', 'Earliglow.jpeg'),
-(3, 'Allstar', 120, 'Allstar strawberries look most like the stereotypical strawberries you’d find in a grocery store. They feature a perfect strawberry shape and plump, red appearance. They’re large strawberries that ripen in late mid-season. They have a mild but sweet flavor and are resistant to disease.', 'Allstar.jpeg'),
-(4, 'Ozark Beauty', 150, 'Ozark Beauty is extremely popular everbearing variety of strawberry. The strawberries produced are sweet, red, and rather large for an everbearing variety. They also feature several large yields several times a year – one in early spring and one later in the season, with a few berries produced in between.', 'OzarkBeauty.jpeg'),
-(5, 'Chandler', 140, 'Chandler strawberries are June bearers that produce very large, firm, and exceptionally tasty strawberries. Their glossy, red color and flavor profile are extremely desirable. However, the drawback of Chandler berries is that they are not very resistant to disease.', 'Chandler.jpeg'),
-(6, 'Jewel', 110, 'Jewel strawberries are the picture perfect strawberry. They’re large, red, and juicy. They have an excellent flavor and are high-quality and hearty. They also have longer season yields.', 'Jewel.jpeg'),
-(7, 'Seascape', 200, 'Seascape is an everbearing strawberry variety that is resistant to disease and tolerant of a variety of growing conditions. Not only are they bright red on the outside, but they also feature a delectable red flesh on the inside.', 'Seascape.jpeg'),
-(8, 'Tristar', 220, 'Its reddish color at the top has entitled this variety with the name of Sindoora. Extremely juicy and pulpy, this mango is one of the tastiest mangoes one can ever have.\r\nSeason: Mid-May to Mid-June', 'Tristar.jpeg');
+INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_discount`) VALUES
+(1, 'Honeoye', 250, 'Honeoye strawberries are day-neutral June-bearing strawberries. They’re large berries that range in color from bright orange-red to red. They’re true to their name as they taste sweet, like honey. This type of strawberry produces a lot of berries, as it has a high yield and a long growing season.', 'Honeoye.jpg', 15),
+(2, 'Earliglow', 200, 'Earliglow is a June-bearing strawberry that’s true to its name because it produces berries sooner than any other strawberry. Its berry size is medium to large, with a deep red color and a shape that’s symmetrical and conical. They have a sweet flavor that’s great for canning.', 'Earliglow.jpeg', 0),
+(3, 'Allstar', 120, 'Allstar strawberries look most like the stereotypical strawberries you’d find in a grocery store. They feature a perfect strawberry shape and plump, red appearance. They’re large strawberries that ripen in late mid-season. They have a mild but sweet flavor and are resistant to disease.', 'Allstar.jpeg', 20),
+(4, 'Ozark Beauty', 150, 'Ozark Beauty is extremely popular everbearing variety of strawberry. The strawberries produced are sweet, red, and rather large for an everbearing variety. They also feature several large yields several times a year – one in early spring and one later in the season, with a few berries produced in between.', 'OzarkBeauty.jpeg', 20),
+(5, 'Chandler', 140, 'Chandler strawberries are June bearers that produce very large, firm, and exceptionally tasty strawberries. Their glossy, red color and flavor profile are extremely desirable. However, the drawback of Chandler berries is that they are not very resistant to disease.', 'Chandler.jpeg', 0),
+(6, 'Jewel', 110, 'Jewel strawberries are the picture perfect strawberry. They’re large, red, and juicy. They have an excellent flavor and are high-quality and hearty. They also have longer season yields.', 'Jewel.jpeg', 0),
+(7, 'Seascape', 200, 'Seascape is an everbearing strawberry variety that is resistant to disease and tolerant of a variety of growing conditions. Not only are they bright red on the outside, but they also feature a delectable red flesh on the inside.', 'Seascape.jpeg', 15),
+(8, 'Tristar', 220, 'Its reddish color at the top has entitled this variety with the name of Sindoora. Extremely juicy and pulpy, this mango is one of the tastiest mangoes one can ever have.\r\nSeason: Mid-May to Mid-June', 'Tristar.jpeg', 0);
 
 -- --------------------------------------------------------
 
@@ -245,7 +249,6 @@ INSERT INTO `wishlist` (`wishlist_id`, `product_id`, `user_id`) VALUES
 (53, 5, 33),
 (56, 7, 39),
 (55, 8, 40),
-(60, 1, 41),
 (50, 1, 18),
 (52, 3, 33),
 (51, 8, 18),
@@ -314,25 +317,25 @@ ALTER TABLE `wishlist`
 -- 使用表AUTO_INCREMENT `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- 使用表AUTO_INCREMENT `details`
 --
 ALTER TABLE `details`
-  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- 使用表AUTO_INCREMENT `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- 使用表AUTO_INCREMENT `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- 使用表AUTO_INCREMENT `reviews`
