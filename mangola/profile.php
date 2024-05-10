@@ -64,11 +64,8 @@ $details = ['gender'];
 
 <!DOCTYPE html>
 <html>
-<?php include "./includes/css_header.php";
-include "./includes/header_postlogin.php";
-?>
+<?php include "includes/header.php"; ?>
 <link rel="stylesheet" type="text/css" href="css/profile.css">
-
 
 <body style="background-color: #EEEEEE">
     <div class="container">

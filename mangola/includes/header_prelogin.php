@@ -10,10 +10,10 @@
       <a href="index.php" class="navbar-brand text-white">Strawberry Heaven</a>
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse">
+    <!-- <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
         <li><a class="text-white" href="index.php">Home</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div> -->
   </div>
 </nav>

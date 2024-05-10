@@ -8,7 +8,7 @@ if (!(isset($_SESSION['name']) && isset($_SESSION['email']))) {
 include "includes/css_header.php"; ?>
 
 <body style="background-color: #EEEEEE;">
-	<?php include "includes/header_admin.php"; ?>
+	<?php include "includes/header.php"; ?>
 	<div class="row margin-left20">
 
 		<div class="col-md-12 text-center">

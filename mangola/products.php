@@ -9,13 +9,7 @@ include "includes/dbconnect.php";
 
 <!DOCTYPE html>
 <html>
-<?php include "includes/css_header.php";
-if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
-  include "includes/header_admin.php";
-} else {
-  include "includes/header_postlogin.php";
-}
-?>
+<?php include "includes/header.php"; ?>
 <link rel="stylesheet" type="text/css" href="./css/aboutUsSection.css">
 
 <body style="background-image: url('images/background2.jpg')!important;">
