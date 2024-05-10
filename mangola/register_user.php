@@ -1,46 +1,63 @@
-<?php
-session_start();
-if (!(isset($_POST['user_name']) && isset($_POST['user_email']))) {
-	header('Location: register.php?msg=108');
-}
-include "includes/dbconnect.php";
-//fetch the user data
-$name = $_POST['user_name'];
-$email = $_POST['user_email'];
-$phone = $_POST['user_phone'];
-$password = $_POST['user_password'];
+<!DOCTYPE html>
+<html>
 
-//check email address
-if(empty($_POST['user_email'])|| !filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)){
-	$errors[] = "Please go back and fill in your email address and make sure it is valid!<br/>";
-} else{
-	$user_email = $_POST['user_email'];
-}
-//check for already registerd user
-$query1 = "SELECT * FROM `users` WHERE `email` LIKE '$email' OR `phone` LIKE '$phone'";
-$result1 = mysqli_query($connection, $query1);
-if (mysqli_num_rows($result1) == 0) {
-	//push data to the DB
-	$query = "INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `password`) VALUES (NULL, '$name', '$email', '$phone', '$password')";
-	if (mysqli_query($connection, $query)) {
-		//redirect
-		// $_SESSION['name'] = $name;
-		// $_SESSION['email'] = $email;
-		// $_SESSION['phone'] = $phone;
+<?php include "includes/css_header.php" ?>
 
-		// // $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
-		// $query1 = "SELECT * FROM `users` WHERE `email` LIKE '$email' AND `password` LIKE '$password'";
-		// // $query1 = "SELECT * FROM `users` WHERE `email` LIKE '$email' AND `password` LIKE '$pwd_hash'";
-		// $result1 = mysqli_query($connection, $query1);
-		// $row1 = mysqli_fetch_assoc($result1);
-		// $_SESSION['user_id'] = $row1['user_id'];
-		header('Location: index.php');
-	}
-} elseif (mysqli_num_rows($result1) == 1) {
-	header('Location: register.php?msg=2');
-} else {
-	echo "Some Error occured!";
-}
+<body style="background-color:#2F3235 !important">
+
+    <?php include "includes/header_prelogin.php" ?>
+
+    <div id="main_body" class="container">
+
+        
+        <div class="row">
+            <div class="col-md-8 margin-top50">
+                <h1 class="text-white font-80px text-center"><b>Get the best Strawberries at the cheapest price from Strawberry Heaven</b></h1>
+            </div>
+
+            <div class="col-md-4 margin-top50">
+                <h2 class="text-white text-center"> <b>Create an Account here</b> </h2>
+                <form class="form" action="register_user.php" method="POST">
+                    <label class="text-white">First Name:</label>
+                    <input type="Name" class="form-control" placeholder="Enter your Name" name="user_name" required><br>
+                    <label class="text-white">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter your Email" name="user_email" required><br>
+                    <label class="text-white">Phone:</label>
+                    <input type="tel" class="form-control" placeholder="Enter your Phone" name="user_phone" required><br>
+                    <label class="text-white">Password:</label>
+                    <input type="password" class="form-control" placeholder="Password" name="user_password" required><br>
+                    <input type="submit" class="btn btn-danger btn-lg btn-block" value="Register" name=""><br>
+                </form>
+                <p class="text-white"><i>Already a member? <a href="index.php">Login Here</a></i></p>
+            </div>
+            <?php
+            if (isset($_GET['msg'])) {
+                if ($_GET['msg'] == '2') {
+                    echo "<h3 class='text-center text-white margin-top50'><i>User Email OR Phone Already Taken!</i></h3>";
+                }
+            }
 
 
-//redirect
+        if($_SERVER["REQUEST_MEHTOD"] == "POST"){
+            $user_name = $_POST['user_name'];
+            $user_email = $_POST['user_email'];
+            $user_phone = $_POST['user_phone'];
+            $user_password = $_POST['user_password'];
+            if(strpos($user_email, '@') === false || strpos($user_email, '.com') === false)
+            echo "Incalid email format. Email must contain '@' and end with '.com' .";
+        }
+
+        $strongRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*\(\)_])[A-Za-z\d!@#\$%\^&\*\(\)_]{8,}$/";
+
+        if (!preg_match($strongRegex, $user_password)) {
+            echo "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+        
+        }
+        
+
+        ?>
+        </div>
+    </div>
+</body>
+
+</html>
