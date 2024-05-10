@@ -8,6 +8,7 @@ if (!(isset($_SESSION['name']) && isset($_SESSION['email']))) {
 include "includes/css_header.php";
 include "includes/dbconnect.php";
 ?>
+<link rel="stylesheet" type="text/css" href="./css/reviews.css">
 
 <body style="background-color: #EEEEEE;">
 	<?php include "includes/header_postlogin.php";
@@ -57,23 +58,58 @@ include "includes/dbconnect.php";
 			<h1 class="text-center"> TOP REVIEWS</h1>
 		</div>
 	</div>
-	<div class="row">
+
+	<!-- review brief -->
+	<div class="review-container">
+		<!-- --d是自定义属性,可通过var函数对其调用 -->
 
 		<?php
 		$query1 = "SELECT * FROM `reviews` r JOIN `users` u ON r.`user_id`=u.`user_id` WHERE r.`product_id` LIKE '$product_id'";
 		$result1 = (mysqli_query($connection, $query1));
-		while ($row1 = mysqli_fetch_assoc($result1)) {
-			echo '<div class="col-md-6">
-      							<div class="product-tab margin-left20"> 
-      								<h4><b>' . $row1['review_heading'] . '</b><br>
-      								<small>By: ' . $row1['name'] . '</small> <br><br>
-      								' . $row1['review_text'] . ' </h4>
-      							</div>
-      						  </div>';
+		$reviewIndex = 0;
+		while ($reviewIndex < 5 && $result1) {
+			while ($reviewIndex < 5 && $row1 = mysqli_fetch_assoc($result1)) {
+				echo '<div class="card" style="--d:' . ($reviewIndex - 1) . ';">
+				<div class="content">
+					<div class="img">
+					<img src="' . $row1['user_profile_image'] . '" alt="">
+					</div>
+					<div class="detail">
+						<span>' . $row1['name'] . '</span>
+						<p>' . $row1['review_heading'] . '</p>
+					</div>
+				</div>
+				<a href="#" onmouseover="viewReviewDetails(this)" class="details-btn" onmouseout="hideReviewDetails(this)">Details</a>
+
+				<div class="col-md-6 review-details" style="display:none;">
+					<div class="product-tab margin-left20 "> 
+						<h4>' . $row1['review_text'] . ' </h4>
+					</div>
+				</div>
+			</div>';
+				$reviewIndex++;
+			}
+			$result1->data_seek(0);
 		}
 		?>
-
 	</div>
+
+	<!-- review details -->
+
+
 </body>
+<script>
+	function viewReviewDetails(e) {
+		const parentEle = e.parentNode;
+		const reviewDetails = parentEle.querySelector('.review-details');
+		reviewDetails.style.display = 'block';
+	}
+
+	function hideReviewDetails(e) {
+		const parentEle = e.parentNode;
+		const reviewDetails = parentEle.querySelector('.review-details');
+		reviewDetails.style.display = 'none';
+	}
+</script>
 
 </html>
