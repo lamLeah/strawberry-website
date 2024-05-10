@@ -17,7 +17,7 @@
         <li><a class="text-white" href="show_wishlist_items.php">Wishlist</a></li>
         <li><a class="text-white" href="show_order_items.php">Orders</a></li>
         <li><a class="text-white" href="profile.php">Profile</a></li>
-        <li><a class="text-white" href="memory_game/game_index.html">Game</a></li>
+        <li><a class="text-white" href="game_page.php">Game</a></li>
         <li><a class="text-white" href="logout.php">Logout</a></li>
       </ul>
 
