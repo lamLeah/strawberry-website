@@ -10,6 +10,12 @@ $email = $_POST['user_email'];
 $phone = $_POST['user_phone'];
 $password = $_POST['user_password'];
 
+//check email address
+if(empty($_POST['user_email'])|| !filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)){
+	$errors[] = "Please go back and fill in your email address and make sure it is valid!<br/>";
+} else{
+	$user_email = $_POST['user_email'];
+}
 //check for already registerd user
 $query1 = "SELECT * FROM `users` WHERE `email` LIKE '$email' OR `phone` LIKE '$phone'";
 $result1 = mysqli_query($connection, $query1);
