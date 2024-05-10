@@ -1,0 +1,70 @@
+.mobile-menu.show {
+  display: block;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-menu ul {
+  list-style: none;
+}
+nav.mobile-menu {
+  /* 固定定位 */
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: #00a65a;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+.mobile-menu .menus {
+  margin: 50px 0;
+  color: #337ab7;
+  padding-left: 10px;
+}
+.mobile-menu .li {
+  letter-spacing: 2px;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 16px 0;
+  /* 动画过渡 */
+  transition: 0.3s;
+  position: relative;
+}
+.mobile-menu .menus li:hover {
+  /* background-color: #d2a6c6; */
+  background-color: #74adaa;
+}
+.mobile-menu .li .fa {
+  font-size: 20px;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  margin-left: 5px;
+}
+.mobile-menu .li ul {
+  width: 0;
+  /* height: 550px; */
+  /* height: 100%; */
+  padding: 50px 0;
+  /* background-color: #74adaa; */
+  background-color: #0e7465;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.mobile-menu .li ul li {
+  padding: 16px 24px;
+  /* 文字禁止换行 */
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.mobile-menu .li:hover ul {
+  width: 250px;
+}
+.mobile-menu .li ul li:hover {
+  /* background-color: #c28fb4; */
+  background-color: #4f908e;
+}

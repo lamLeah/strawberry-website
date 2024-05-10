@@ -9,13 +9,7 @@ include "includes/dbconnect.php";
 
 <!DOCTYPE html>
 <html>
-<?php include "includes/css_header.php";
-if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
-  include "includes/header_admin.php";
-} else {
-  include "includes/header_postlogin.php";
-}
-?>
+<?php include "includes/header.php"; ?>
 <link rel="stylesheet" type="text/css" href="./css/aboutUsSection.css">
 
 <body style="background-image: url('images/background2.jpg')!important;">
@@ -47,8 +41,6 @@ if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
     <div class="row">
 
       <!--Bio-Section in 10/12 parts-->
-
-
       <div class="col-md-10">
         <div class="col-md-12" style="padding: 0; margin:12px 0">
           <img src="images/wallpaper1.jpg" class="img-size-lg">
@@ -120,8 +112,6 @@ if (($_SESSION['email'] == "admin@strawberryHeaven.com")) {
         </div>
 
       </div>
-
-
 
       <!--List of items in 2/12 parts-->
       <div class="col-md-2">
