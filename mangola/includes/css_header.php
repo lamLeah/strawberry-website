@@ -3,7 +3,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/mobileHeader.css">
 	<script>
+		// web menu - show the highlight
 		document.addEventListener('DOMContentLoaded', (event) => {
 			let currentPage = window.location.pathname;
 			let links = document.querySelectorAll('nav ul li a');
@@ -19,6 +21,15 @@
 
 				}
 			});
+		});
+
+		// mobile menu toggle
+		window.addEventListener('load', (event) => {
+			let navBtn = document.querySelector('.navbar-toggle');
+			navBtn.onclick = function(e) {
+				let mobileNav = document.querySelector('.mobile-menu');
+				mobileNav.classList.toggle('show');
+			}
 		});
 	</script>
 </head>

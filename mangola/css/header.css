@@ -181,3 +181,15 @@
 .unstyled {
   list-style-type: none;
 }
+
+@media (max-width: 767px) {
+  #navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

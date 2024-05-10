@@ -51,3 +51,4 @@
     </div>
   </div>
 </nav>
+<?php include "mobile_header.php" ?>
