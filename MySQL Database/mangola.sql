@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1:3306
--- 生成日期： 2024-05-09 18:48:48
+-- 生成日期： 2024-05-10 08:35:07
 -- 服务器版本： 10.4.21-MariaDB
 -- PHP 版本： 7.4.27
 
@@ -191,7 +191,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `user_profile_image` varchar(255) DEFAULT NULL,
+  `user_profile_image` varchar(255) DEFAULT 'images/user_profiles/default_user_profile.png',
   `phone` varchar(255) NOT NULL,
   `address` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -201,31 +201,31 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `user_profile_image`, `phone`, `address`) VALUES
-(42, 'Dhvanil', 'dhvanilpatel@gmail.com', 'dhvanil', '', '', ''),
+(42, 'Dhvanil', 'dhvanilpatel@gmail.com', 'dhvanil', 'images/user_profiles/42.jpeg', '', ''),
 (41, 'Chayan', 'chayanmaida@hotmail.com', 'chayan', 'images/user_profiles/41.jpeg', '1234567890', 'macau 110'),
-(40, 'Bananta', 'banantabala@gmail.com', 'bananta', '', '', ''),
-(38, 'Anindo', 'anindodas@yahoo.in', 'anindo', '', '', ''),
-(39, 'Vishal', 'vishalrc_1@gmail.com', 'vishal', '', '', ''),
-(37, 'Agnish', 'agnishgupta@gmail.com', 'agnish', '', '', ''),
-(36, 'Mamta', 'mamtabanarjee@tmc.com', 'mamta', '', '', ''),
-(19, 'Admin', 'admin@strawberryHeaven.com', '1234', '', '', ''),
-(35, 'Lalu', 'yadav_lalu@bihar.com', 'bihari', '', '', ''),
+(40, 'Bananta', 'banantabala@gmail.com', 'bananta', 'images/user_profiles/40.png', '', ''),
+(38, 'Anindo', 'anindodas@yahoo.in', 'anindo', 'images/user_profiles/38.jpeg', '', ''),
+(39, 'Vishal', 'vishalrc_1@gmail.com', 'vishal', 'images/user_profiles/default_user_profile.png', '', ''),
+(37, 'Agnish', 'agnishgupta@gmail.com', 'agnish', 'images/user_profiles/default_user_profile.png', '', ''),
+(36, 'Mamta', 'mamtabanarjee@tmc.com', 'mamta', 'images/user_profiles/default_user_profile.png', '', ''),
+(19, 'Admin', 'admin@strawberryHeaven.com', '1234', 'images/user_profiles/default_user_profile.png', '', ''),
+(35, 'Lalu', 'yadav_lalu@bihar.com', 'bihari', 'images/user_profiles/default_user_profile.png', '', ''),
 (31, '', '', '', '', '', ''),
-(34, 'Rahul', 'gandhi.rahul@congress.com', 'abcd', '', '', ''),
-(33, 'Modi', 'narendra_modi@bjp.com', 'namo', '', '', ''),
-(18, 'Anirban', 'anirban@anirban.com', '1234', '', '', ''),
-(43, 'Niloy', 'niloyburdhan@hotmail.com', 'niloy', '', '', ''),
-(44, 'Rana Pratap', 'ranapratap@hotmail.com', 'ranapratap', '', '', ''),
-(45, 'Sourav', 'souravnaskar@rediffmail.com', 'sourav', '', '', ''),
-(46, 'Subhradip', 'subhradiprustyroy@rediffmail.com', 'rusty', '', '', ''),
-(47, 'LLLL', 'leah@123.com', 'leahfldjflka', '', '', ''),
-(48, 'LLL', 'lll@gmail.com', 'jdlkfjdlskaj', '', '', ''),
-(49, 'LLL', 'leah@456.com', 'fadssadcsad', '', '', ''),
-(50, 'Lin', 'lin@gmail.com', '12345678', '', '', ''),
-(51, 'LLLLdaf', 'leah@123fads.com', 'fadsfasdfasd', NULL, '321423443254', NULL),
-(52, 'fdsafcad', 'leah@gsfgf123.com', 'fdsfdfa', NULL, '32142344', NULL),
-(53, 'fdsafcadfad', 'lefadsfah@123.com', 'fadsgsfsdvczx', NULL, '321423443245', NULL),
-(54, 'afgsfdafs', 'dadgsdfsa@fsda.com', 'fadsfsda', NULL, '321423441234', NULL),
+(34, 'Rahul', 'gandhi.rahul@congress.com', 'abcd', 'images/user_profiles/default_user_profile.png', '', ''),
+(33, 'Modi', 'narendra_modi@bjp.com', 'namo', 'images/user_profiles/default_user_profile.png', '', ''),
+(18, 'Anirban', 'anirban@anirban.com', '1234', 'images/user_profiles/default_user_profile.png', '', ''),
+(43, 'Niloy', 'niloyburdhan@hotmail.com', 'niloy', 'images/user_profiles/default_user_profile.png', '', ''),
+(44, 'Rana Pratap', 'ranapratap@hotmail.com', 'ranapratap', 'images/user_profiles/default_user_profile.png', '', ''),
+(45, 'Sourav', 'souravnaskar@rediffmail.com', 'sourav', 'images/user_profiles/default_user_profile.png', '', ''),
+(46, 'Subhradip', 'subhradiprustyroy@rediffmail.com', 'rusty', 'images/user_profiles/default_user_profile.png', '', ''),
+(47, 'LLLL', 'leah@123.com', 'leahfldjflka', 'images/user_profiles/default_user_profile.png', '', ''),
+(48, 'LLL', 'lll@gmail.com', 'jdlkfjdlskaj', 'images/user_profiles/default_user_profile.png', '', ''),
+(49, 'LLL', 'leah@456.com', 'fadssadcsad', 'images/user_profiles/default_user_profile.png', '', ''),
+(50, 'Lin', 'lin@gmail.com', '12345678', 'images/user_profiles/default_user_profile.png', '', ''),
+(51, 'LLLLdaf', 'leah@123fads.com', 'fadsfasdfasd', 'images/user_profiles/default_user_profile.png', '321423443254', NULL),
+(52, 'fdsafcad', 'leah@gsfgf123.com', 'fdsfdfa', 'images/user_profiles/default_user_profile.png', '32142344', NULL),
+(53, 'fdsafcadfad', 'lefadsfah@123.com', '', 'images/user_profiles/default_user_profile.png', '321423443245', NULL),
+(54, 'afgsfdafs', 'dadgsdfsa@fsda.com', 'fadsfsda', 'images/user_profiles/default_user_profile.png', '321423441234', NULL),
 (55, 'LLLLdafafsd', 'dhvanilpfadsfatel@gmail.com', 'adsfdscad', NULL, '3214234423145', NULL);
 
 -- --------------------------------------------------------
