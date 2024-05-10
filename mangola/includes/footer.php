@@ -28,10 +28,28 @@
     <div class="col-md-4">
       <div class="footer social-media">
         <h4 class="text-center"><b> Follow Strawberry Heaven on:</b> </h4>
-        <a href="https://www.facebook.com/anirbandey303"> <img src="images/fb.jpg" class="thumbnail"> </a>
-        <a href="https://www.instagram.com/_anirbandey_"> <img src="images/insta.jpg" class="thumbnail"> </a>
-        <a href="https://www.twitter.com/_anirbandey_"> <img src="images/twitter.jpg" class="thumbnail"> </a>
+        <a href="#"> <img src="images/fb.jpg" class="thumbnail"> </a>
+        <a href="#"> <img src="images/insta.jpg" class="thumbnail"> </a>
+        <a href="#"> <img src="images/twitter.jpg" class="thumbnail"> </a>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <li>
+          <h2>MC35094(1), LIN XIAODAN, Leah</h2>
+        </li>
+        <li>
+          <h2>MC35107(3), Leong Sam U, Levana</h2>
+        </li>
+        <li>
+          <h2>MC35110(3), Zhuang Hui</h2>
+        </li>
+        <li>
+          <h2>MC35179(4), Kou Kam Meng, Karen</h2>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
