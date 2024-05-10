@@ -41,8 +41,6 @@ include "includes/dbconnect.php";
     <div class="row">
 
       <!--Bio-Section in 10/12 parts-->
-
-
       <div class="col-md-10">
         <div class="col-md-12" style="padding: 0; margin:12px 0">
           <img src="images/wallpaper1.jpg" class="img-size-lg">
@@ -114,8 +112,6 @@ include "includes/dbconnect.php";
         </div>
 
       </div>
-
-
 
       <!--List of items in 2/12 parts-->
       <div class="col-md-2">
