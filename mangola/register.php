@@ -8,13 +8,8 @@
 	<?php include "includes/header_prelogin.php" ?>
 
 	<div id="main_body" class="container">
-		<?php
-		if (isset($_GET['msg'])) {
-			if ($_GET['msg'] == '2') {
-				echo "<h3 class='text-center text-white margin-top50'><i>User Email OR Phone Already Taken!</i></h3>";
-			}
-		}
-		?>
+
+		
 		<div class="row">
 			<div class="col-md-8 margin-top50">
 				<h1 class="text-white font-80px text-center"><b>Get the best Strawberries at the cheapest price from Strawberry Heaven</b></h1>
@@ -35,6 +30,31 @@
 				</form>
 				<p class="text-white"><i>Already a member? <a href="index.php">Login Here</a></i></p>
 			</div>
+			<?php
+			if (isset($_GET['msg'])) {
+				if ($_GET['msg'] == '2') {
+					echo "<h3 class='text-center text-white margin-top50'><i>User Email OR Phone Already Taken!</i></h3>";
+				}
+			}
+
+
+		if($_SERVER["REQUEST_MEHTOD"] == "POST"){
+			$user_name = $_POST['user_name'];
+			$user_email = $_POST['user_email'];
+			$user_phone = $_POST['user_phone'];
+			$user_password = $_POST['user_password'];
+			if(strpos($user_email, '@') === false || strpos($user_email, '.com') === false)
+			echo "Incalid email format. Email must contain '@' and end with '.com' .";
+		}
+
+		$strongRegex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*\(\)_])[A-Za-z\d!@#\$%\^&\*\(\)_]{8,}$/";
+
+		if (!preg_match($strongRegex, $user_password)) {
+			echo "Password must be at least 8 characters long, and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+		
+		}
+
+		?>
 		</div>
 	</div>
 </body>
