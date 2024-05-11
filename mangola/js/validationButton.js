@@ -10,5 +10,5 @@ function sendEmailValidationCode() {
     setTimeout(function() {
         // 重新启用发送按钮
         sendButton.disabled = false;
-    }, 10000); // 5000毫秒（即5秒）后重新启用发送按钮
+    }, 60000); // 5000毫秒（即5秒）后重新启用发送按钮
 }
