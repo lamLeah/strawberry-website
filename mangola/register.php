@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<script src="mangola/js/validationButton.js"></script>
+	</head>
 
 <?php include "includes/css_header.php" ?>
 
@@ -73,7 +76,7 @@
 		// Create a new XMLHttpRequest object
 		var xhr = new XMLHttpRequest();
 		// Configure the request
-		xhr.open("GET", "./includes/mail_sendCode.php?to=lamleah4623@gmail.com", true);
+		xhr.open("GET", "./includes/mail_sendCode.php?to=rainklekou@gmail.com", true);
 		// Define the callback function
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
