@@ -35,7 +35,19 @@
 					<label class="text-white">Validation code:</label>
 					<input type="text" id="email-validation-code" class="form-control" placeholder="Enter your Code" name="user_email_validation_code" required><br>
 					<label class="text-white">Phone:</label>
-					<input type="tel" class="form-control" placeholder="Enter your Phone" name="user_phone" required><br>
+                    <div class="form-row">
+	               <div class="col-md-4">
+		          <select class="form-control" name="user_phone_zone_code" required>
+			            <option value="+853">+853</option>
+			            <option value="+86">+86</option>
+			             <option value="+852">+852</option>
+		        </select>
+	              </div>
+	            <div class="col-md-7">
+		        <input type="tel" class="form-control" placeholder="Enter your Phone" name="user_phone" required>
+	                 </div>
+                        </div>
+                        <br>
 					<label class="text-white">Password:</label>
 					<input type="password" class="form-control" placeholder="Password" name="user_password" required><br>
 					<input type="submit" class="btn btn-danger btn-lg btn-block" value="Register" name=""><br>
