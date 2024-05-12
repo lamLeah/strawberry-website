@@ -88,7 +88,8 @@
 		// Create a new XMLHttpRequest object
 		var xhr = new XMLHttpRequest();
 		// Configure the request
-		xhr.open("GET", "./includes/mail_sendCode.php?to=rainklekou@gmail.com", true);
+		var userEmail = document.querySelector('input[name="user_email"]').value;
+xhr.open("GET", "./includes/mail_sendCode.php?to=" + userEmail, true);
 		// Define the callback function
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
