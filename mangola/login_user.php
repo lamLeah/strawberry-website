@@ -29,8 +29,10 @@ if ($num_rows == 1) {
 	//retriving session name
 	$row = mysqli_fetch_assoc($result);
 
-
-	if (($_SESSION['email'] == "admin@strawberryHeaven.com") && ($row['password'] == "1234")) {
+	if (($email == "admin@strawberryHeaven.com") && ($row['password'] == "1234")) {
+		$_SESSION['name'] = $row['name'];
+		$_SESSION['email'] = $row['email'];
+		$_SESSION['user_id'] = $row['user_id'];
 		header('Location: admin.php');
 	} else {
 		// check pwd
