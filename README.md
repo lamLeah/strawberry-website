@@ -15,7 +15,7 @@ Revolutionizing Online Shopping for Fresh and Delicious Strawberries.
 - Play with our little games to have fun. 
 
 ## Installation 
-1. Clone the repository: add the github link
+1. Clone the repository: [add the github link](https://github.com/lamLeah/strawberry-website)
 
 ## Contact
 If you have any questions or suggestions, feel free to reach out to our support team at support@strawberryshop.com. You can also visit our website Strawberry Heaven. 
