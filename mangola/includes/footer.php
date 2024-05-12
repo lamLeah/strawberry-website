@@ -36,20 +36,38 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <ul>
-        <li>
-          <h2>MC35094(1), LIN XIAODAN, Leah</h2>
-        </li>
-        <li>
-          <h2>MC35107(3), Leong Sam U, Levana</h2>
-        </li>
-        <li>
-          <h2>MC35110(3), Zhuang Hui</h2>
-        </li>
-        <li>
-          <h2>MC35179(4), Kou Kam Meng, Karen</h2>
-        </li>
-      </ul>
-    </div>
-  </div>
+
+    <style>
+  .box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .box h2 {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+  }
+
+  .box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .box ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+</style>
+
+<div class="box">
+  <ul>
+    <li><h2><a href="#">MC35094(1), LIN XIAODAN, Leah</a></h2></li>
+    <li><h2><a href="#">MC35107(3), Leong Sam U, Levana</a></h2></li>
+    <li><h2><a href="#">MC35110(3), Zhuang Hui</a></h2></li>
+    <li><h2><a href="#">MC35179(4), Kou Kam Meng, Karen</a></h2></li>
+  </ul>
 </div>
